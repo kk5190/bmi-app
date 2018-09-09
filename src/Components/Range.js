@@ -8,8 +8,6 @@ class Range extends Component {
   onChange = (event) => {
     this.props.onChange(this.state.value);
     this.setState({value: event.target.value});
-    console.log(event.target.value);
-    
   }  
 
   render() {
