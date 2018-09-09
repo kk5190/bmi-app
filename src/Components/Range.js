@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 class Range extends Component {
   state = {
     value: this.props.value
@@ -30,6 +30,12 @@ Range.defaultProps = {
   min: 0,
   max: 245,
   step: 1
+}
+
+Range.propTypes = {
+  min: PropTypes.number.isRequired,
+  max: PropTypes.number.isRequired,
+  step: PropTypes.number.isRequired
 }
 
 export default Range;

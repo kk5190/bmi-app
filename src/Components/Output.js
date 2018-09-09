@@ -23,7 +23,7 @@ class Output extends Component {
         <h3>{height}</h3>  
         <h3>{weight} lbs</h3>
         <h3>{bmi}</h3>
-        <h3 className={(this.props.data.bmiClass === "Obese") ? "dabger" : ""}>{bmiClass} {(this.props.data.bmiClass === "Obese") ? <a href='https://someproductsite.com'>What can I do?</a> : ""}</h3>
+        <h3 className={(this.props.data.bmiClass === "Obese") ? "danger" : ""}>{bmiClass} {(this.props.data.bmiClass === "Obese") ? <a href='https://someproductsite.com'>What can I do?</a> : ""}</h3>
       </div>
     );
   }
