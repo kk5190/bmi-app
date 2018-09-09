@@ -10,6 +10,19 @@ class App extends Component {
     bmi: 22.49,
     bmiClass: 'Nomal'
   }
+
+  heightChangeHandler = (height) => {
+    this.setState({height}, function(){
+      console.log(this.state);
+    })
+  }
+
+  weightChangeHandler = (weight) => {
+    this.setState({weight}, function(){
+      console.log(this.state);
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -17,8 +30,13 @@ class App extends Component {
         <form>
           <div>
             <label>Height</label>
-            <Range />
+            <Range 
+              value={this.state.height}
+              onChange={this.heightChangeHandler} />
             <label>Weight</label>
+            <Range 
+              value={this.state.weight}
+              onChange={this.weightChangeHandler} />
           </div>
         </form>
         <br /><br />
