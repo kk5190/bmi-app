@@ -9,9 +9,38 @@ body {
   border: #ccc solid 1px;
 }
 
-.output h3 {
+h1 {
+  color: #607d8b;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: #ccc 1px solid;
   padding: 20px;
+  margin: 20px auto;
+}
+
+.block p {
+  margin: 0;
+  font-size: 40px;
+  padding: 0;
+  color: #999;
+}
+
+.output h3 {
+  margin: 0;
+  padding: 0;
   font-size: 40px;
 }
 
@@ -21,8 +50,15 @@ body {
   text-decoration: none;
 }
 
+.success {
+  color: #09AF00
+}
 .danger {
-  color: #AF1818;
+  color: #EE6002;
+}
+
+input {
+  background: #f4f4f4;
 }
 
 /* Raneg Input Styles https://www.cssportal.com/style-input-range/ */

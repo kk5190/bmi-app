@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWeight, faMale, faBalanceScale, faSmile, faSadCry } from '@fortawesome/free-solid-svg-icons'
 
 class Output extends Component {
   toFeet = (n) => {
@@ -20,10 +22,20 @@ class Output extends Component {
     const bmiClass = this.props.data.bmiClass;
     return (
       <div className="output">
-        <h3>{height}</h3>  
-        <h3>{weight} lbs</h3>
-        <h3>{bmi}</h3>
-        <h3 className={(this.props.data.bmiClass === "Obese") ? "danger" : ""}>{bmiClass} {(this.props.data.bmiClass === "Obese") ? <a href='https://someproductsite.com'>What can I do?</a> : ""}</h3>
+        <div class="block">
+          <p><FontAwesomeIcon icon={faMale} /></p><h3>{height}</h3>  
+        </div>
+        <div class="block">
+          <p><FontAwesomeIcon icon={faWeight} /></p><h3>{weight} lbs</h3>
+        </div>
+        <div class="block">
+          <p><FontAwesomeIcon icon={faBalanceScale} /></p><h3> {bmi}</h3>
+        </div>
+        <div class="block">
+          <h3 className={(this.props.data.bmiClass === "Normal") ? "success" : "danger"}>
+          {bmiClass} {(this.props.data.bmiClass === "Normal") ? "" : <a href='https://www.cigna.com/takecontrol/tc/bmi/' target="_blank">What can I do?</a>}  <FontAwesomeIcon icon={(this.props.data.bmiClass === "Normal") ? faSmile : faSadCry} />
+          </h3>
+        </div>
       </div>
     );
   }

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalculator, faMale, faWeight } from '@fortawesome/free-solid-svg-icons'
+
 import './App.css';
 import Range from './Components/Range';
 import Output from './Components/Output';
@@ -8,7 +11,7 @@ class App extends Component {
     height: 170,
     weight: 65,
     bmi: 22.49,
-    bmiClass: 'Nomal'
+    bmiClass: 'Normal'
   }
 
   heightChangeHandler = (height) => {
@@ -34,14 +37,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>BMI Claculator</h1>
+        <h1><FontAwesomeIcon icon={faCalculator} /> BMI Claculator</h1>
         <form>
           <div>
-            <label>Height</label>
+            <div class="label">
+              <label>Height</label> <p><FontAwesomeIcon icon={faMale} /></p>
+            </div>
             <Range 
               value={this.state.height}
               onChange={this.heightChangeHandler} />
-            <label>Weight</label>
+            <div class="label">
+              <label>Weight</label><p><FontAwesomeIcon icon={faWeight} /></p>
+            </div>
             <Range 
               value={this.state.weight}
               onChange={this.weightChangeHandler} />
